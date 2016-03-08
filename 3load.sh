@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-COUNTRIES="`wget -qO- https://raw.githubusercontent.com/mareksr/spamip/master/geoblock.list`"
+COUNTRIES="`wget -qO- https://raw.githubusercontent.com/mareksr/vietnamip/master/geoblock.list`"
 
 ipset flush  geoblock
 echo $COUNTRIES

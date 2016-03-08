@@ -3,7 +3,7 @@
 use LWP::UserAgent;
 
 my $ua = LWP::UserAgent->new;
-my $req = HTTP::Request->new(GET => 'https://raw.githubusercontent.com/mareksr/spamip/master/geoblock.list');
+my $req = HTTP::Request->new(GET => 'https://raw.githubusercontent.com/mareksr/vietnamip/master/geoblock.list');
 my $res = $ua->request($req);
 if ($res->is_success) {
  @answer = split('\n', $res->as_string);
