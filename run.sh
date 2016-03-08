@@ -5,6 +5,7 @@
 ./3vietnam.pl > black.ip.10
 
 git commit -m "ok"
+git commit -a 
 git push
 
 #load ips
