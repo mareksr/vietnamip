@@ -48,8 +48,8 @@ CU Cuba 1
 CV Cape 1
 CW Curacao 1
 CY Cyprus 1
-CZ Czech 15
-DE Germany 15
+CZ Czech 150
+DE Germany 150
 DJ Djibouti 1
 DK Denmark 15
 DM Dominica 1
@@ -59,7 +59,7 @@ EC Ecuador 1
 EE Estonia 1
 EG Egypt 10
 ER Eritrea 1
-ES Spain 15
+ES Spain 100
 ET Ethiopia 1
 EU Europe 20
 FI Finland 15
@@ -95,7 +95,7 @@ IN India 5
 IQ Iraq 1
 IR Iran 1
 IS Iceland 1
-IT Italy 10
+IT Italy 100
 JE Jersey 1
 JM Jamaica 1
 JO Jordan 1
@@ -199,7 +199,7 @@ TW Taiwan 1
 TZ Tanzania 1
 UA Ukraine 1
 UG Uganda 1
-US United 30
+US United 50
 UY Uruguay 1
 UZ Uzbekistan 1
 VC Saint 1
