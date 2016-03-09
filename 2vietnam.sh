@@ -1,17 +1,15 @@
 #!/bin/bash
 
->/tmp/miki.txt
 
-#ostatnie 30 dni blacklogow
+cat /tmp/miki.txt  | cut -d ' ' -f 1 > /tmp/miki2.txt
 
-find /usr/local/assp/logs/ -mtime -31 -name *bmail* | while read line
-do
-	cat $line | grep -E -o "(25[0-5]|2[0-4][0-9]|[1]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[1]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[1]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[1]?[0-9][0-9]?)" >> /tmp/miki.txt
-done
-
-cat /tmp/miki.txt | sort | uniq -c | sort | while read line
+cat /tmp/miki2.txt | sort | uniq -c | sort | while read line
 do
    checkip=`echo $line | cut -d ' ' -f 2`
    country=`geoiplookup $checkip | grep "Country" | sed  "s/GeoIP Country Edition://" | sed "s/, / \"/g"|  sed "s/$/\"/g" `
    echo "$line$country"
 done
+
+
+#Mar-09-16 00:00:33 m1-78030-02340 [Worker_1] [URIBL] 74.221.210.19 <DiabetesDefeatedSystem@uscrez.win> to: informatyk@e-fresh.pl [spam found] (URIBLcache: fail, uscrez.win listed in multi.surbl.org) [Why This Secret Ingredient Reverses Type 2 Diabetes] -> /usr/local/assp5/spam/2340.eml;
+
