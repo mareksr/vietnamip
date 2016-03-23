@@ -1,26 +1,29 @@
 #!/bin/bash
 
+
+DIR='/opt/megaspam/vietnamip'
+
 #tworzy /tmp/miki.txt zawierajacy ip oraz email
-./1vietnam.sh
+echo "1vietnam.sh"
+$DIR/1vietnam.sh
 # tworzy biala liste ip ktore maja zostac usuniete z miki.txt
-./white.pl > whitelist
-cat whitelist | sort | uniq > whitelist.out
+echo "whitelist"
+$DIR/white.pl 
+cat $DIR/whitelist | sort | uniq > $DIR/whitelist.out
 
 
 #tworzy liste z geolokacja oraz ilosc wystepowania ip
+echo "2vietnam.sh"
+$DIR/2vietnam.sh > $DIR/l.txt
+echo "3vietnam.sh"
+$DIR/3vietnam.pl > $DIR/black.ip.10
 
-./2vietnam.sh > l.txt
-./3vietnam.pl > black.ip.10
-
-git commit -m "ok"
-git commit -a 
-git push
 
 #load ips
-./loadIP.sh
+#./loadIP.sh
 
 #load nets
-./3load.sh
+#./3load.sh
 
 
 

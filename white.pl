@@ -2,6 +2,7 @@
 
 
 #skrypt usuwa IP ktore sa przypisane do domen z whitelisty
+$DIR='/opt/megaspam/vietnamip';
 
 open F, "domains.txt";
 @bdomains=<F>;
@@ -25,16 +26,24 @@ close FILE;
 # jezeli ip jest na white to go usun z blacklisty
 
 open FILE, "/tmp/miki.txt";
+$lines++ while (<FILE>);
+close FILE;
 
+open WFILE, ">$DIR/whitelist";
+open FILE, "/tmp/miki.txt";
+$l=0;
 while(<FILE>){
+	$l++;
+	printf ("%.2f %% %c", ($l / $lines)*100,13);			
 	foreach $domain (@wd){
 		if (/\@$domain/) {
  			($ip) = split;
-			 print "$ip\n"; 
+			 print WFILE "$ip\n"; 
 			 last; 
 		}
 	}	
 }
 
 close FILE;
+close WFILE;
 
