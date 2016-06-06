@@ -139,7 +139,6 @@ MU Mauritius 1
 MV Maldives 1
 MW Malawi 1
 MX Mexico 1
-MY Malaysia 1
 MZ Mozambique 1
 NA Namibia 1
 NC New  1
