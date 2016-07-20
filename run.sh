@@ -17,6 +17,7 @@ echo "2vietnam.sh"
 $DIR/2vietnam.sh > $DIR/l.txt
 echo "3vietnam.sh"
 $DIR/3vietnam.pl > $DIR/black.ip.10
+sed -i '/City/d' $DIR/black.ip.10
 
 
 #load ips
