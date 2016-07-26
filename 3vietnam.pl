@@ -30,7 +30,7 @@ while (<F>){
 }
 close F;
 
-open F, "l.txt";
+open F, "/opt/megaspam/vietnamip/l.txt";
 
 while(<F>){
 	($a,$b,$c,$d)=split;

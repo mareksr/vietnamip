@@ -11,5 +11,3 @@ do
    echo "$line$country"
 done
 
-
-

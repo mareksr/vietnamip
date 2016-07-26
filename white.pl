@@ -4,9 +4,10 @@
 #skrypt usuwa IP ktore sa przypisane do domen z whitelisty
 $DIR='/opt/megaspam/vietnamip';
 
-open F, "domains.txt";
+open F, "$DIR/domains.txt";
 @bdomains=<F>;
 close F;
+
 
 open FILE, "/usr/local/assp/files/whitedomains.txt";
 
