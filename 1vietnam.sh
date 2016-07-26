@@ -32,4 +32,5 @@ git commit -a -m 'autocommit on change'
 
 git push
 
+/opt/megaspam/vietnamip/loadIP.sh
 
