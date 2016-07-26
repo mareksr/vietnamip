@@ -27,3 +27,9 @@ cat domains.txt | grep -vFf- /tmp/miki2.txt | cut -d ' ' -f1 | sort | uniq > /op
 cat /opt/megaspam/vietnamip/whitelist.out | fgrep -vf- /tmp/miki.txt | cut -d ' ' -f 1 | sort | uniq > /opt/megaspam/vietnamip/black.ip.10
 
 
+cd /opt/megaspam/vietnamip/
+git commit -a -m 'autocommit on change'
+
+git push
+
+
