@@ -22,7 +22,7 @@ cat /tmp/.miki.txt  | sort -k 1,1  |  sort -n | awk '{print $3" "$2" "$1}'  | un
 cat /usr/local/assp/files/whitedomains.txt  | cut -d '@' -f 2 |  grep -vwFf- /tmp/miki.txt > /tmp/miki2.txt
 
 #wywal bardzo znane domeny. dostajemy ip ktore musza byc usuniete z blackisty
-cat /opt/megaspam/vietnamip/domains.txt | grep -vFf- /tmp/miki2.txt | cut -d ' ' -f1 | sort | uniq > /opt/megaspam/vietnamip/whitelist.out
+cat /opt/megaspam/vietnamip/domains.txt | grep -Ff- /tmp/miki2.txt | cut -d ' ' -f1 | sort | uniq > /opt/megaspam/vietnamip/whitelist.out
 
 cat /opt/megaspam/vietnamip/whitelist.out | fgrep -vf- /tmp/miki.txt | cut -d ' ' -f 1 | sort | uniq > /opt/megaspam/vietnamip/black.ip.10
 
