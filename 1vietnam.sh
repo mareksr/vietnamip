@@ -15,7 +15,7 @@ done
 #get if #ip is >10
 
 echo "creating miki.txt"
-cat /tmp/.miki.txt  | sort -k 1,1  |  sort -n | awk '{print $3" "$2" "$1}'  | uniq -c -f 1 | awk -v limit=10 '$1 > limit{print $3}' |  grep -wFf- /tmp/.miki.txt > /tmp/miki.txt
+cat /tmp/.miki.txt  | sort -k 1,1  |  sort -n | awk '{print $3" "$2" "$1}'  | uniq -c -f 1 | awk -v limit=5 '$1 > limit{print $3}' |  grep -wFf- /tmp/.miki.txt > /tmp/miki.txt
 
 
 #wywal IP dla ktorych domeny znajduja sie na WL
