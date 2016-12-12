@@ -13,45 +13,46 @@ else {
 }
 
 foreach (@answer){
-	if($_ eq ""){
-		$k=1;
-		next;
-	}
-	push(@countries,$_) if($k==1);
+        if($_ eq ""){
+                $k=1;
+                next;
+        }
+        push(@countries,$_) if($k==1);
 }
 
 
 #tworzymy mapowanie skrot panstwa na ilosc ip
 open F, "countries.txt";
 while (<F>){
-	($a,$b,$c)=split;
-	$panstwa{$a}=$c;
-	
+        ($a,$b,$c)=split;
+        $panstwa{$a}=$c;
+
 }
 close F;
 
-open F, "/opt/megaspam/vietnamip/l.txt";
+open F, "l.txt";
 
 while(<F>){
-	($a,$b,$c,$d)=split;
-	if($a>=$panstwa{$c}){
-		next if(&check($c,@countries));
-		print "$b #$c\n";
-	}	
-	
+        ($a,$b,$c,$d)=split;
+        if($a>=$panstwa{$c}){
+                next if(&check($c,@countries));
+                print "$b #$c\n";
+        }
+
 }
 close F;
 
 
 sub check(){
-	my ($country,@countries)= @_;
-	$tick=0;
-	foreach (@countries){
-		 if($_ eq $country){
-			$tick=1;
-			next;
-		}
-	}
-	return $tick;
+        my ($country,@countries)= @_;
+        $tick=0;
+        foreach (@countries){
+                 if($_ eq $country){
+                        $tick=1;
+                        next;
+                }
+        }
+        return $tick;
 }
+
 
